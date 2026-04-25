@@ -76,7 +76,7 @@ async def send_join_required(update: Update, context: ContextTypes.DEFAULT_TYPE)
         if user_id in OWNER_IDS or await cached_is_premium(user_id):
             return True
         target = update.message if update.message else update.callback_query.message
-        await safe_send(target.reply_text("⚠️ Only premium users can use this bot in external groups.\n\nUse /start in @FN_CHECKERR_BOT for pricing."))
+        await safe_send(target.reply_text("⚠️ Only premium users can use this bot in external groups.\n\nUse /start in @Jsisbsisbot for pricing."))
         return False
     
     joined = await check_user_joined(user_id, context)
@@ -510,7 +510,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
          InlineKeyboardButton("🛠 𝗧𝗢𝗢𝗟𝗦", callback_data="menu_tools")],
         [InlineKeyboardButton("👤 𝗢𝗪𝗡𝗘𝗥", callback_data="menu_owner"),
          InlineKeyboardButton("💎 𝗣𝗥𝗜𝗖𝗜𝗡𝗚", callback_data="menu_pricing")],
-        [InlineKeyboardButton("💬 𝗝𝗢𝗜𝗡 𝗚𝗥𝗢𝗨𝗣", url="https://t.me/fnchecker_chat")]
+        [InlineKeyboardButton("💬 𝗝𝗢𝗜𝗡 𝗚𝗥𝗢𝗨𝗣", url="https://t.me/+XkvUejvYBE1hZTll")]
     ])
     await update.message.reply_text(text, reply_markup=keyboard, parse_mode='HTML', disable_web_page_preview=True)
 
