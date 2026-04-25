@@ -248,7 +248,7 @@ OWNER_IDS = [int(os.environ.get('BOT_OWNER_ID', '7593550190'))]
 
 def generate_key(length=16):
     chars = string.ascii_uppercase + string.digits
-    return 'JACK-' + ''.join(secrets.choice(chars) for _ in range(length))
+    return 'KRISH-' + ''.join(secrets.choice(chars) for _ in range(length))
 
 async def create_redeem_key(created_by: int, duration_days: int) -> Optional[str]:
     pool = await get_pool()
