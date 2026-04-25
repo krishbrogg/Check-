@@ -1,33 +1,56 @@
 import os
 import asyncio
 import asyncpg
-import time
 import logging
-from typing import List, Dict, Optional
-from datetime import datetime, timedelta
 
 logger = logging.getLogger(__name__)
-
-DATABASE_URL = os.environ.get('DATABASE_URL')
 
 _pool = None
 _pool_lock = asyncio.Lock()
 
+
+def get_database_url():
+    url = os.getenv("DATABASE_URL")
+
+    if url:
+        return url
+
+    host = os.getenv("PGHOST")
+    port = os.getenv("PGPORT", "5432")
+    user = os.getenv("PGUSER")
+    password = os.getenv("PGPASSWORD")
+    database = os.getenv("PGDATABASE")
+
+    if not all([host, user, password, database]):
+        raise RuntimeError(
+            "Database variables missing. Set DATABASE_URL or PGHOST, PGPORT, PGUSER, PGPASSWORD, PGDATABASE in Railway worker variables."
+        )
+
+    return f"postgresql://{user}:{password}@{host}:{port}/{database}"
+
+
 async def get_pool():
     global _pool
+
     if _pool is not None and not _pool._closed:
         return _pool
+
     async with _pool_lock:
         if _pool is not None and not _pool._closed:
             return _pool
+
+        db_url = get_database_url()
+
         _pool = await asyncpg.create_pool(
-            DATABASE_URL,
+            db_url,
             min_size=3,
             max_size=20,
             max_inactive_connection_lifetime=300,
             command_timeout=30,
         )
+
     return _pool
+
 
 async def safe_acquire():
     pool = await get_pool()
