@@ -448,7 +448,7 @@ def format_response(card, status, result, bin_data, gate, time_taken, username, 
 
     mb = _MB()
     (mb
-     .e(ts).t(f' 𝗙𝗡 𝗖𝗛𝗘𝗖𝗞𝗘𝗥 ➜ {header} ').e(te).t('\n')
+     .e(ts).t(f' TESTING 𝗖𝗛𝗘𝗖𝗞𝗘𝗥 ➜ {header} ').e(te).t('\n')
      .t('━━━━━━━━━━━━━━━━━\n')
      .e(pe['card']).t('𝗖𝗮𝗿𝗱 ➜ ').code(card).t('\n')
      .e(pe['sts']).t(f'𝗦𝘁𝗮𝘁𝘂𝘀 ➜ {sts_txt} ').e(sts_e).t('\n')
@@ -471,7 +471,7 @@ def format_response(card, status, result, bin_data, gate, time_taken, username, 
     )
     mb.link(to_mono(username), user_link)
     mb.t('\n⟐ ')
-    mb.link('𝗙𝗡 𝗖𝗛𝗘𝗖𝗞𝗘𝗥', bot_link)
+    mb.link('TESTING 𝗖𝗛𝗘𝗖𝗞𝗘𝗥', bot_link)
     return mb.build()
 
 # ============ START COMMAND ============
@@ -497,7 +497,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     tier_text = "👑 Owner" if user_id in OWNER_IDS else ("💎 Premium" if is_prem else "🆓 Free")
     user_link = f"tg://user?id={user_id}"
     
-    text = f"""⚡ 𝗙𝗡 𝗖𝗛𝗘𝗖𝗞𝗘𝗥
+    text = f"""⚡ TESTING 𝗖𝗛𝗘𝗖𝗞𝗘𝗥
 ━━━━━━━━━━━━━━━━━
 𝗨𝘀𝗲𝗿 ➜ <a href="{user_link}">{username}</a>
 𝗧𝗶𝗲𝗿 ➜ {tier_text}
@@ -635,7 +635,7 @@ async def menu_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             tier_text = "👑 Owner" if user_id in OWNER_IDS else ("💎 Premium" if is_prem else "🆓 Free")
             user_link = f"tg://user?id={user_id}"
             
-            text = f"""⚡ 𝗙𝗡 𝗖𝗛𝗘𝗖𝗞𝗘𝗥
+            text = f"""⚡ TESTING 𝗖𝗛𝗘𝗖𝗞𝗘𝗥
 ━━━━━━━━━━━━━━━━━
 𝗨𝘀𝗲𝗿 ➜ <a href="{user_link}">{username}</a>
 𝗧𝗶𝗲𝗿 ➜ {tier_text}
@@ -669,7 +669,7 @@ async def check_joined_callback(update: Update, context: ContextTypes.DEFAULT_TY
             is_prem = await is_premium(user_id)
             tier_text = "👑 Owner" if user_id in OWNER_IDS else ("💎 Premium" if is_prem else "🆓 Free")
             user_link = f"tg://user?id={user_id}"
-            text = f"""⚡ 𝗙𝗡 𝗖𝗛𝗘𝗖𝗞𝗘𝗥
+            text = f"""⚡ TESTING 𝗖𝗛𝗘𝗖𝗞𝗘𝗥
 ━━━━━━━━━━━━━━━━━
 𝗨𝘀𝗲𝗿 ➜ <a href="{user_link}">{username}</a>
 𝗧𝗶𝗲𝗿 ➜ {tier_text}
