@@ -36,7 +36,7 @@ logger = logging.getLogger(__name__)
 BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 OWNER_ID = int(os.getenv('BOT_OWNER_ID', '7593550190'))
 OWNER_USERNAME = "E9krish"
-BOT_USERNAME = "FN_CHECKERR_BOT"
+BOT_USERNAME = "Jsisbsisbot"
 
 REQUIRED_GROUP_ID = -1003066786395
 REQUIRED_GROUP_LINK = "https://t.me/+XkvUejvYBE1hZTll"
@@ -510,7 +510,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
          InlineKeyboardButton("🛠 𝗧𝗢𝗢𝗟𝗦", callback_data="menu_tools")],
         [InlineKeyboardButton("👤 𝗢𝗪𝗡𝗘𝗥", callback_data="menu_owner"),
          InlineKeyboardButton("💎 𝗣𝗥𝗜𝗖𝗜𝗡𝗚", callback_data="menu_pricing")],
-        [InlineKeyboardButton("💬 𝗝𝗢𝗜𝗡 𝗚𝗥𝗢𝗨𝗣", url="https://t.me/fnchecker_chat")]
+        [InlineKeyboardButton("💬 𝗝𝗢𝗜𝗡 𝗚𝗥𝗢𝗨𝗣", url="https://t.me/+XkvUejvYBE1hZTll")]
     ])
     await update.message.reply_text(text, reply_markup=keyboard, parse_mode='HTML', disable_web_page_preview=True)
 
@@ -635,7 +635,7 @@ async def menu_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             tier_text = "👑 Owner" if user_id in OWNER_IDS else ("💎 Premium" if is_prem else "🆓 Free")
             user_link = f"tg://user?id={user_id}"
             
-            text = f"""⚡ 𝗙𝗡 𝗖𝗛𝗘𝗖𝗞𝗘𝗥
+            text = f"""⚡ TESTING 𝗖𝗛𝗘𝗖𝗞𝗘𝗥
 ━━━━━━━━━━━━━━━━━
 𝗨𝘀𝗲𝗿 ➜ <a href="{user_link}">{username}</a>
 𝗧𝗶𝗲𝗿 ➜ {tier_text}
@@ -647,7 +647,7 @@ async def menu_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
                  InlineKeyboardButton("🛠 𝗧𝗢𝗢𝗟𝗦", callback_data="menu_tools")],
                 [InlineKeyboardButton("👤 𝗢𝗪𝗡𝗘𝗥", callback_data="menu_owner"),
                  InlineKeyboardButton("💎 𝗣𝗥𝗜𝗖𝗜𝗡𝗚", callback_data="menu_pricing")],
-                [InlineKeyboardButton("💬 𝗝𝗢𝗜𝗡 𝗚𝗥𝗢𝗨𝗣", url="https://t.me/fnchecker_chat")]
+                [InlineKeyboardButton("💬 𝗝𝗢𝗜𝗡 𝗚𝗥𝗢𝗨𝗣", url="https://t.me/+XkvUejvYBE1hZTll")]
             ])
             await query.edit_message_text(text, reply_markup=keyboard, parse_mode='HTML', disable_web_page_preview=True)
         
@@ -669,7 +669,7 @@ async def check_joined_callback(update: Update, context: ContextTypes.DEFAULT_TY
             is_prem = await is_premium(user_id)
             tier_text = "👑 Owner" if user_id in OWNER_IDS else ("💎 Premium" if is_prem else "🆓 Free")
             user_link = f"tg://user?id={user_id}"
-            text = f"""⚡ 𝗙𝗡 𝗖𝗛𝗘𝗖𝗞𝗘𝗥
+            text = f"""⚡ TESTING 𝗖𝗛𝗘𝗖𝗞𝗘𝗥
 ━━━━━━━━━━━━━━━━━
 𝗨𝘀𝗲𝗿 ➜ <a href="{user_link}">{username}</a>
 𝗧𝗶𝗲𝗿 ➜ {tier_text}
@@ -681,7 +681,7 @@ async def check_joined_callback(update: Update, context: ContextTypes.DEFAULT_TY
                  InlineKeyboardButton("🛠 𝗧𝗢𝗢𝗟𝗦", callback_data="menu_tools")],
                 [InlineKeyboardButton("👤 𝗢𝗪𝗡𝗘𝗥", callback_data="menu_owner"),
                  InlineKeyboardButton("💎 𝗣𝗥𝗜𝗖𝗜𝗡𝗚", callback_data="menu_pricing")],
-                [InlineKeyboardButton("💬 𝗝𝗢𝗜𝗡 𝗚𝗥𝗢𝗨𝗣", url="https://t.me/fnchecker_chat")]
+                [InlineKeyboardButton("💬 𝗝𝗢𝗜𝗡 𝗚𝗥𝗢𝗨𝗣", url="https://t.me/+XkvUejvYBE1hZTll")]
             ])
             await query.edit_message_text(text, reply_markup=keyboard, parse_mode='HTML', disable_web_page_preview=True)
         else:
